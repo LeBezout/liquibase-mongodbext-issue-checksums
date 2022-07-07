@@ -1,0 +1,45 @@
+REMOVE FILE : <LIQUIBASE_HOME>/lib/liquibase-mongodb-4.12.0.jar
+
+$ ./status.sh
+Starting Liquibase at 11:19:18 (version 4.12.0 #3073 built at 2022-06-17 05:59+0000)
+Liquibase Version: 4.12.0
+Liquibase Community 4.12.0 by Liquibase
+8 change sets have not been applied to SA@jdbc:h2:file:./db/H2_DB
+Liquibase command 'status' was executed successfully.
+
+$ ./update.sh
+Starting Liquibase at 11:19:54 (version 4.12.0 #3073 built at 2022-06-17 05:59+0000)
+Liquibase Version: 4.12.0
+Liquibase Community 4.12.0 by Liquibase
+Running Changeset: db-changelog-master.xml::tag-0::DEMO
+Running Changeset: db-changelog-master.xml::V1.0-table-1::DEMO
+Running Changeset: db-changelog-master.xml::V1.0-table-2::DEMO
+Running Changeset: db-changelog-master.xml::V1.0-table-3::DEMO
+Running Changeset: db-changelog-master.xml::V1.0-idx-1::DEMO
+Running Changeset: db-changelog-master.xml::V1.0-idx-2::DEMO
+Running Changeset: db-changelog-master.xml::V1.0-idx-3::DEMO
+Running Changeset: db-changelog-master.xml::tag-1::DEMO
+Liquibase command 'update' was executed successfully.
+
+$ ./status.sh
+Starting Liquibase at 11:20:56 (version 4.12.0 #3073 built at 2022-06-17 05:59+0000)
+Liquibase Version: 4.12.0
+Liquibase Community 4.12.0 by Liquibase
+SA@jdbc:h2:file:./db/H2_DB is up to date
+Liquibase command 'status' was executed successfully.
+
+------------------------------------------------------------------------
+
+ADD FILE : <LIQUIBASE_HOME>/lib/liquibase-mongodb-4.12.0.jar
+
+$ ./status.sh
+Starting Liquibase at 11:22:01 (version 4.12.0 #3073 built at 2022-06-17 05:59+0000)
+Liquibase Version: 4.12.0
+Liquibase Community 4.12.0 by Liquibase
+[2022-07-07 11:22:03] GRAVE [liquibase.integration] Validation Failed:
+     3 change sets check sum
+          db-changelog-master.xml::V1.0-idx-1::DEMO was: 8:2dd360d29b520efbff9e009c8f1ede77 but is now: 8:c5c5eb8c9349884bd56305aa6674f0dc
+          db-changelog-master.xml::V1.0-idx-2::DEMO was: 8:9c1917548b54c696e668bc20916d2d75 but is now: 8:c5c5eb8c9349884bd56305aa6674f0dc
+          db-changelog-master.xml::V1.0-idx-3::DEMO was: 8:52471d4242b9654d55f93863b2a5aae0 but is now: 8:c5c5eb8c9349884bd56305aa6674f0dc
+etc.
+
