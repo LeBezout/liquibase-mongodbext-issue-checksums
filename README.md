@@ -2,7 +2,7 @@
 
 This sample project demonstrate a smash-up between liquibase and the liquibase-mongodb extension.
 
-First case : createIndex bad checksums calculation.
+First case : **createIndex** bad checksums calculation.
 
 ## Versions
 
@@ -18,7 +18,11 @@ First case : createIndex bad checksums calculation.
   * Liquibase command 'update' was executed successfully.
 * Execute `./status.sh` (or `liquibase --defaults-file=conf/h2.properties status`) to validate that the H2 DB is up to date
   * SA@jdbc:h2:file:./db/H2_DB is up to date
-  * **...and then...**
-* Add the file `liquibase-mongodb-4.12.0.jar` and its dépendencies to the `lib` folder (`bson-4.6.1.jar`, `jackson-*-2.11.3.jar`, `mongodb-driver-core-4.6.1.jar`, `mongodb-driver-sync-4.6.1.jar`)
+* **...and then...**
+* Add the file `liquibase-mongodb-4.12.0.jar` and its dependencies to the `lib` folder (`bson-4.6.1.jar`, `jackson-*-2.11.3.jar`, `mongodb-driver-core-4.6.1.jar`, `mongodb-driver-sync-4.6.1.jar`)
 * Re-execute `./status.sh` (or `liquibase --defaults-file=conf/h2.properties status`) :
   * Validation Failed: 3 change sets check sum
+
+## Trace samples
+
+See [trace.txt](trace.txt)
